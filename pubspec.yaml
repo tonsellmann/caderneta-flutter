@@ -1,0 +1,31 @@
+name: caderneta
+description: Caderno de fiado para mercadinho, com cobrança pelo WhatsApp e Pix copia e cola.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  qr_flutter: ^4.1.0
+  shared_preferences: ^2.5.3
+  url_launcher: ^6.3.2
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: PlusJakartaSans
+      fonts:
+        - asset: fonts/PlusJakartaSans.ttf
+    - family: Caveat
+      fonts:
+        - asset: fonts/Caveat.ttf

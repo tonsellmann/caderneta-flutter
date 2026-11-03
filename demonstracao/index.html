@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caderneta · app de fiado</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231e3a8a'/><path d='M10 9h12M10 15h12M10 21h8' stroke='white' stroke-width='2.5' stroke-linecap='round'/><path d='M7 5v22' stroke='%23e45b5b' stroke-width='2'/></svg>">
+<style>
+  /* A moldura da demonstração: o app no celular e, ao lado, o que experimentar. No celular de
+     verdade, o app ocupa a tela inteira. */
+  :root { --bic: #1e3a8a; --tinta: #141c2f; --tinta-suave: #4b5670; --fundo: #e8edf6; --linha: #d3dbea; --marca-texto: #ffe45c; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body { background: var(--fundo); color: var(--tinta); font: 400 15px/1.55 system-ui, -apple-system, 'Segoe UI', sans-serif; }
+  .palco { min-height: 100%; display: grid; align-items: center; gap: 48px; padding: 24px; }
+  @media (min-width: 780px) { .palco { grid-template-columns: auto minmax(0, 340px); justify-content: center; } }
+  .aparelho { width: 390px; height: min(844px, calc(100dvh - 48px)); min-height: 600px; padding: 10px; border-radius: 52px; background: var(--tinta); box-shadow: 0 30px 60px -30px rgb(20 28 47 / .5); }
+  .aparelho iframe { display: block; width: 100%; height: 100%; border: 0; border-radius: 42px; background: #f3f5f9; }
+  .lado h1 { margin: 0 0 8px; font-size: 26px; line-height: 1.15; }
+  .lado > p { margin: 0 0 24px; color: var(--tinta-suave); }
+  .lado h2 { margin: 0 0 8px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--tinta-suave); }
+  .experimente { margin: 0; padding: 0; list-style: none; counter-reset: passo; }
+  .experimente li { counter-increment: passo; position: relative; padding: 12px 0 12px 40px; border-top: 1px solid var(--linha); }
+  .experimente li::before { content: counter(passo); position: absolute; left: 0; top: 11px; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--marca-texto); font-weight: 700; font-size: 13px; }
+  .nota { margin-top: 20px; font-size: 13px; color: var(--tinta-suave); }
+  @media (max-width: 779px) { .lado { display: none; } .palco { justify-content: center; } }
+  @media (max-width: 559px) {
+    .palco { display: block; padding: 0; }
+    .aparelho { width: 100%; height: 100dvh; min-height: 560px; padding: 0; border-radius: 0; background: none; box-shadow: none; }
+    .aparelho iframe { border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+<main class="palco">
+  <div class="aparelho"><iframe src="app/" title="Caderneta, o app de fiado"></iframe></div>
+  <aside class="lado" aria-labelledby="lado-titulo">
+    <h1 id="lado-titulo">Caderneta</h1>
+    <p>O caderno de fiado do Mercadinho Dois Irmãos no celular: quanto a loja tem a receber, quem cobrar primeiro e a cobrança pelo WhatsApp com o Pix no valor da conta. É o app em Flutter, compilado para a web.</p>
+    <h2>Experimente</h2>
+    <ol class="experimente">
+      <li>Toque em <b>Anotar fiado</b>, escolha um cliente e anote uma compra pelo teclado.</li>
+      <li>Abra a <b>Dona Cida</b> e anote R$ 150: o app avisa quanto passa do limite.</li>
+      <li>Em <b>Seu Zé da oficina</b>, toque em <b>Recebi</b> e veja a conta baixar e a ordem de cobrança mudar.</li>
+      <li>Segure o dedo numa linha do caderno para riscar o que foi anotado errado.</li>
+      <li>Toque em <b>Cobrar no WhatsApp, com Pix</b> para ver a mensagem e o QR Code com o valor.</li>
+    </ol>
+    <p class="nota">O mercadinho e os clientes são inventados. O que você anota fica só neste navegador.</p>
+  </aside>
+</main>
+</body>
+</html>
